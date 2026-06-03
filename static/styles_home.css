@@ -1,0 +1,423 @@
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Archivo Black", sans-serif;
+              font-weight: 400;
+  font-style: normal;
+        }
+
+
+
+        body {
+
+                    background-image: url('C:\Users\asus\Downloads\426770-vertical-pitbull-dog-wallpaper-1920x1200.jpg');
+
+                }
+
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(pichure/145.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+         font-family: "Archivo Black", sans-serif;
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+         font-family: "Archivo Black", sans-serif;
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .nav-links ul li::after {
+         font-family: "Archivo Black", sans-serif;
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text-box h1 {
+            font-size: 62px;
+
+
+        }
+
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+
+        }
+
+        .hero-btn {
+         font-family: "Archivo Black", sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 1st;
+        }
+        @media(max-width: 700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+
+            .nav-links ul li {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: 0;
+                text-align: left;
+                z-index: 2;
+
+            }
+        }
+
+      /*---------Service--------*/
+        .Service {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+         font-family: "Archivo Black", sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        p {
+         font-family: "Archivo Black", sans-serif;
+
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .Service-col {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        h3 {
+         font-family: "Archivo Black", sans-serif;
+
+            font-weight: 600;
+            margin: 10px 0;
+            ;
+        }
+
+        .Service-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 2);
+        }
+
+
+        /*---------line--------*/
+        .line {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+
+        }
+        .line-col{
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== Tournament Flow Section ===== */
+.tournament-flow {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.tournament-flow h1 {
+    font-size: 34px;
+    margin-bottom: 40px;
+    color: #ffb703;
+    text-transform: uppercase;
+}
+
+/* Flow container */
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Each stage box */
+.flow-box {
+    background: #2b2b2b;
+    color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.flow-box:hover {
+    transform: scale(1.05);
+}
+
+.flow-box h3 {
+    margin-bottom: 8px;
+    color: #ffd166;
+    font-size: 20px;
+}
+
+.flow-box p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #f1faee;
+}
+
+.flow-box span {
+    font-size: 14px;
+    color: #06d6a0;
+}
+
+/* Grand Finals special */
+.grand-final {
+    background: linear-gradient(135deg, #ff0000, #ff6600);
+    font-weight: bold;
+    color: #fff;
+}
+
+.grand-final h3 {
+  color:#fff;
+}
+
+        /* ===== Prize Pool Section ===== */
+.prize-pool {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    color: #fff;
+}
+
+.prize-pool h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #ffb703;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Total Prize Box */
+.prize-box.total {
+    background: linear-gradient(135deg, #ff0000, #ff6600);
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Position Prizes */
+.prize-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.prize-box {
+    background: #111;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.prize-box:hover {
+    transform: scale(1.05);
+}
+
+.prize-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #e63946;
+    text-transform: uppercase;
+}
+
+.prize-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color:#06d6a0;
+}
+
+        /* ===== Rules & Points Section ===== */
+.rules {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.rules h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rules-box {
+    text-align: left;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.rules-box h3 {
+    margin-bottom: 15px;
+    color: #e63946;
+    font-size: 22px;
+}
+
+.rules-box ul {
+    list-style-type: "✅ ";
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.points-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.points-box h3 {
+    margin-bottom: 15px;
+    color: #457b9d;
+    font-size: 22px;
+}
+
+/* Table Styling */
+.points-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.points-box table th,
+.points-box table td {
+    border: 2px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.points-box table th {
+    background-color: #1d3557;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.points-box table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.points-box table tr:hover {
+    background-color: #e9f5ff;
+    transition: 0.3s;
+}
+
+/* Kill points paragraph */
+.points-box p {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+    color:#2a9d8f;
+}
+
+
+
+    </style>

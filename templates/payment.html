@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles_payment.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMPS Registration Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <div class="payment-box">
+        <h2>BMPS Registration Fee: ₹500</h2>
+        <p>Please wait, starting the payment process...</p>
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        window.onload = async function() {
+            try {
+                let response = await fetch("/create_order", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ amount: 500 })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server responded with ${response.status}`);
+                }
+
+                let order = await response.json();
+
+                if(order.error){
+                    alert(`Error from server: ${order.error}`);
+                    return;
+                }
+
+                var options = {
+                    "key": "{{ razorpay_key_id }}",
+                    "amount": order.amount,
+                    "currency": order.currency,
+                    "name": "BMPS Tournament",
+                    "description": "Registration Fee",
+                    "order_id": order.id,
+                    "handler": function (paymentResponse){
+                        // Payment successful hone par
+                        alert("✅ Payment Successful! Payment ID: " + paymentResponse.razorpay_payment_id);
+                        // Redirect the user to the registration page after successful payment
+                        window.location.href = "/serviceRequest"; // 👈 This is the important change
+                    },
+                    "prefill": {
+                        "name": "BGMI Player",
+                        "email": "player@example.com",
+                        "contact": "9999999999"
+                    },
+                    "notes": {
+                        "address": "Tournament Registration"
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+
+                var rzp = new Razorpay(options);
+
+                rzp.on('payment.failed', function (paymentResponse){
+                    alert("❌ Payment Failed! Error: " + paymentResponse.error.description);
+                    // Optionally, you can also redirect on failure
+                    // window.location.href = "/serviceRequest";
+                });
+
+                rzp.open();
+
+            } catch (error) {
+                console.error("Payment initiation failed:", error);
+                alert("Error starting payment. Please check console for details.");
+            }
+        };
+    </script>
+</body>
+</html>

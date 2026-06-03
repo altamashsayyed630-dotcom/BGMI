@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_Highlight.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>BGMI Tournament - Live & Highlights</title>
+
+</head>
+<body>
+ <section class="header">
+    <nav>
+      <div class="nav-links">
+        <ul>
+            <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('table') }}">TABLE</a></li>
+            <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
+            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+<header>BGMI Tournament - Live & Highlights</header>
+<h1>BGMI Tournament - Live Stream</h1>
+ <h1>DAY 1</h1>
+    <a class="live-btn" href="https://www.youtube.com/live/g7awtTST_vE?si=akZa3GZ_lSkmYaGu" target="_blank">
+        🔴 Watch Live on YouTube
+    </a>
+
+<h1>DAY 2</h1>
+    <a class="live-btn" href="https://www.youtube.com/live/UG_vsb4xWuo?si=s9N9jBd6fD_0SaBm" target="_blank">
+        🔴 Watch Live on YouTube
+    </a>
+<h1>DAY 3</h1>
+    <a class="live-btn" href="https://www.youtube.com/live/egyDSZPJN5w?si=VeGT4UzoGoYx5xGE" target="_blank">
+        🔴 Watch Live on YouTube
+    </a>
+
+
+<h1>BGMI Tournament - Highlights</h1>
+
+<div class="grid">
+    <div class="highlight" onclick="openVideo('https://bgmi-highlights.s3.ap-south-1.amazonaws.com/WhatsApp+Video+2025-08-15+at+20.03.24_203ecab4.mp4')">
+        <video src="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/WhatsApp+Video+2025-08-15+at+20.03.24_203ecab4.mp4" poster="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/WhatsApp+Image+2025-08-15+at+20.52.34_f527f396.jpg"></video>
+    </div>
+    <div class="highlight" onclick="openVideo('https://bgmi-highlights.s3.ap-south-1.amazonaws.com/SOLO+7+KILLS+DOMINATION+_+JONATHAN+IS+BACK+_+BGMI.mp4') ">
+        <video src="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/SOLO+7+KILLS+DOMINATION+_+JONATHAN+IS+BACK+_+BGMI.mp4" poster="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/FrO6lj8qERU-HD.jpg"></video>
+    </div>
+    <div class="highlight" onclick="openVideo('https://bgmi-highlights.s3.ap-south-1.amazonaws.com/VID_20250815_202440_770.mp4')">
+        <video src="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/VID_20250815_202440_770.mp4" poster="https://bgmi-highlights.s3.ap-south-1.amazonaws.com/sddefault.jpg"></video>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="videoModal" class="modal">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <video id="modalVid" controls></video>
+</div>
+
+<script>
+function openVideo(url) {
+    document.getElementById("videoModal").style.display = "block";
+    document.getElementById("modalVid").src = url;
+    document.getElementById("modalVid").play();
+}
+function closeVideo() {
+    document.getElementById("videoModal").style.display = "none";
+    document.getElementById("modalVid").pause();
+    document.getElementById("modalVid").src = "";
+}
+</script>
+
+</body>
+</html>

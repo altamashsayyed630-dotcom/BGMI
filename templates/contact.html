@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_contect.css')}}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <section class="header">
+    <nav>
+      <div class="nav-links">
+        <ul>
+          <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+          <li><a href="{{ url_for('home') }}">HOME</a></li>
+          <li><a href="{{ url_for('table') }}">TABLE</a></li>
+          <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
+          <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+
+  <section class="contact">
+    <div class="contact-form">
+      <h1>Contact <span>Us</span></h1>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ab4dbe75-319e-4da9-b3e1-f1a1b2028381">
+        <input type="text" name="name" placeholder="Your Name" >
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="text" name="subject" placeholder="Write a Subject">
+        <textarea name="Message" cols="30" rows="10" spellcheck="true" placeholder="Your suggestion"></textarea>
+        <div class="btn-container">
+        <input type="submit" value="Submit" class="btn">
+      </div>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
