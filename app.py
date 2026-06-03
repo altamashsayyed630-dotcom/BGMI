@@ -15,12 +15,12 @@ razorpay_client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST", "mysql-3caf8b47-altamashsayyed58-4d12.h.aivencloud.com"),
-        user=os.environ.get("DB_USER", "avnadmin"),
-        password=os.environ.get("DB_PASSWORD", "AVNS_1Rqp7MeILYuWMt3d3g2"),
-        port=int(os.environ.get("DB_PORT", 10104)),
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        port=int(os.environ.get("DB_PORT", "10104")),
         ssl_disabled=False,
-        database=os.environ.get("DB_NAME", "defaultdb")
+        database=os.environ.get("DB_NAME")
     )
 
 
