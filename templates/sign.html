@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles_sign.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Sign Up</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <style>
         .popup-overlay {
@@ -20,57 +17,30 @@
             justify-content: center;
             align-items: center;
         }
-        .popup-overlay.show {
-            display: flex;
-        }
+        .popup-overlay.show { display: flex; }
         .popup-box {
             background: #1a1a1a;
             border-radius: 16px;
-            padding: 40px 50px;
+            padding: 35px 40px;
             text-align: center;
             border: 2px solid #f9004d;
             box-shadow: 0 0 30px rgba(249,0,77,0.4);
-            max-width: 380px;
+            max-width: 340px;
             width: 90%;
         }
-        .popup-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-        .popup-box h3 {
-            color: #fff;
-            font-family: "Archivo Black", sans-serif;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .popup-box p {
-            color: #ccc;
-            font-family: "Archivo Black", sans-serif;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
+        .popup-icon { font-size: 45px; margin-bottom: 12px; }
+        .popup-box h3 { color: #fff; font-family: "Archivo Black", sans-serif; font-size: 18px; margin-bottom: 10px; }
+        .popup-box p { color: #ccc; font-family: "Archivo Black", sans-serif; font-size: 13px; margin-bottom: 22px; }
         .popup-btn {
-            background: #f9004d;
-            color: #fff;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-family: "Archivo Black", sans-serif;
-            cursor: pointer;
-            transition: 0.2s;
+            background: #f9004d; color: #fff; border: 2px solid transparent;
+            padding: 10px 30px; border-radius: 8px; font-size: 14px;
+            font-family: "Archivo Black", sans-serif; cursor: pointer; transition: 0.2s;
         }
-        .popup-btn:hover {
-            background: transparent;
-            border: 2px solid #f9004d;
-            color: #f9004d;
-        }
+        .popup-btn:hover { background: transparent; border-color: #f9004d; color: #f9004d; }
     </style>
 </head>
-
 <body>
 
-    <!-- Popup -->
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
@@ -119,8 +89,8 @@
                     <div class="form-group">
                         <input type="password" name="confirm_password" placeholder="Confirm Password">
                     </div>
-                    <input type="submit" value="Sign up">
-                    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+                    <input type="submit" value="SIGN UP">
+                    <p>Already have an account? <a href="{{ url_for('login') }}">Login Here</a></p>
                 </form>
             </div>
         </section>
