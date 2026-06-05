@@ -11,22 +11,21 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-}
-
-.header {
-    min-height: 100vh;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+    padding-top: 70px;
 }
 
 nav {
     display: flex;
-    padding: 2% 6%;
+    padding: 15px 6%;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-links { flex: 1; text-align: right; }
@@ -40,53 +39,69 @@ nav {
     justify-content: flex-end;
 }
 
-.nav-links ul li { display: inline-block; padding: 8px 12px; position: relative; }
-.nav-links ul li a { color: #fff; text-decoration: none; font-size: 13px; font-family: "Archivo Black", sans-serif; }
+.nav-links ul li { display: inline-block; padding: 8px 10px; position: relative; }
+.nav-links ul li a { color: #fff; text-decoration: none; font-size: 13px; }
 .nav-links ul li::after { content: ''; width: 0%; height: 2px; background: #f44336; display: block; margin: auto; transition: 0.5s; }
 .nav-links ul li:hover::after { width: 100%; }
 
 .box {
     width: 90%;
-    max-width: 730px;
-    background-color: rgb(255, 255, 255);
-    margin: 80px auto 40px;
-    padding: 0px 0px 20px 0px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    max-width: 700px;
+    background-color: #fff;
+    margin: 20px auto 40px;
+    padding-bottom: 25px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .box h2 {
-    color: aliceblue;
+    color: #fff;
     background-color: rgb(255, 187, 0);
     text-transform: uppercase;
     text-align: center;
-    padding: 10px 0;
-    margin: 0px;
-    border-radius: 8px 8px 0 0;
+    padding: 14px 0;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
-.box form { width: 90%; height: auto; margin: 20px auto; }
-.box form .form-group { margin: 10px 0; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.box form {
+    width: 90%;
+    margin: 15px auto;
+}
+
+.box form .form-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
 
 .box form .form-group label {
-    display: inline-block;
-    width: 35%;
-    font-size: 14px;
+    width: 38%;
+    font-size: 13px;
     text-transform: uppercase;
     font-weight: 600;
+    color: #333;
+    flex-shrink: 0;
 }
 
 .box form .form-group input,
 .box form .form-group select {
-    display: inline-block;
-    width: 60%;
-    padding: 6px 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #333;
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
     outline: none;
-    background: transparent;
+    background: #f9f9f9;
     font-family: "Archivo Black", sans-serif;
+}
+
+.box form .form-group input:focus,
+.box form .form-group select:focus {
+    border-color: #f44336;
 }
 
 .box form input[type=submit] {
@@ -95,14 +110,15 @@ nav {
     border: 2px solid transparent;
     text-transform: uppercase;
     font-weight: 600;
-    padding: 10px 25px;
+    padding: 12px 30px;
     display: block;
-    margin: 20px auto;
-    width: 120px;
+    margin: 20px auto 5px;
+    width: 130px;
     border-radius: 8px;
     transition: all 0.3s;
     cursor: pointer;
-    font-family: "Archivo Black", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .box form input[type=submit]:hover {
@@ -112,9 +128,11 @@ nav {
 }
 
 @media (max-width: 600px) {
-    .box { margin: 70px auto 30px; }
-    .box form .form-group { flex-direction: column; align-items: flex-start; }
-    .box form .form-group label { width: 100%; font-size: 12px; }
+    body { padding-top: 60px; }
+    .box { margin: 15px auto 30px; }
+    .box h2 { font-size: 13px; letter-spacing: 1px; }
+    .box form .form-group { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .box form .form-group label { width: 100%; font-size: 11px; }
     .box form .form-group input,
     .box form .form-group select { width: 100%; }
     .nav-links ul li a { font-size: 10px; }

@@ -1,85 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <link rel="stylesheet" href="{{ url_for('static', filename='styles_Request.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_Request.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMPS Turnament management system</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>BMPS Tournament Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    {% if message %}
-      <script>
-          alert("{{message}}")
-      </script>
-    {% endif %}
 
-    <section class="header">
-        <nav>
-
-            <div class="nav-links">
-                <ul>
-                    <li><a href="{{ url_for('login') }}">LOGIN</a></li>
-                    <li><a href="{{ url_for('home') }}">HOME</a></li>
-                    <li><a href="{{ url_for('table') }}">TABLE</a></li>
-                    <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
-                    <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-    <section>
-        <div class="box">
-            <h2>PERSONAL INFORMATION </h2>
-            <form  method="POST">
-                <div class="form-group"><label >Full Name</label>
-                    <input type="text" name="Full_Name" placeholder="Enter name">
-                </div>
-                <div class="form-group"><label >In-game Name</label>
-                    <input type="text" name="In_game_Name" placeholder="Enter name">
-                </div>
-                 <div class="form-group"><label>BGMI UID</label>
-                    <input type="text" name="BGMI_UID" placeholder="Enter BGMI UID">
-                </div>
-                <div class="form-group"><label>phone number</label>
-                    <input type="text" name="phone_number" placeholder="Enter number">
-                </div>
-                <div class="form-group"><label>email ID</label>
-                    <input type="email" name="email" placeholder="Enter email">
-                </div>
-                <div class="form-group"><label>Age/DOB</label>
-                    <input type="text" name="Age_DOB" placeholder="Enter Age/DOB">
-                </div>
-                <div class="form-group"><label>City</label>
-                    <input type="text" name="City" placeholder="Enter City">
-                </div>
-
-                <h2>TEAMS INFORMATION</h2>
-                <div class="form-group"><label>Team Name</label>
-                    <input type="text" name="Team_Name" placeholder="Enter Team Name">
-                </div>
-                <div class="form-group"> <label>Role in team</label>
-                    <select name="Role_in_team" id="Courses">
-                        <option value="none">none</option>
-                        <option value="IGL">IGL</option>
-                        <option value="Support">Support</option>
-                        <option value="Assaulter">Assaulter</option>
-                        <option value="Entey Fragger">Entey Fragger</option>
-                    </select>
-                </div>
-                <div class="form-group"><label>Device Name</label>
-                    <input type="text" name="Device_Name" placeholder="Enter Device Name">
-                </div>
-                <input type="submit" value="SEND">
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+                <li><a href="{{ url_for('home') }}">HOME</a></li>
+                <li><a href="{{ url_for('table') }}">TABLE</a></li>
+                <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
+                <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
+    <div class="box">
+        <h2>PERSONAL INFORMATION</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="Full_Name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label>In-game Name</label>
+                <input type="text" name="In_game_Name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label>BGMI UID</label>
+                <input type="text" name="BGMI_UID" placeholder="Enter BGMI UID">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="phone_number" placeholder="Enter number">
+            </div>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="email" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Age/DOB</label>
+                <input type="text" name="Age_DOB" placeholder="Enter Age/DOB">
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" name="City" placeholder="Enter City">
+            </div>
 
+            <h2 style="margin: 15px 0 5px; padding: 14px 0; background: rgb(255,187,0); color:#fff; text-align:center; font-size:16px; letter-spacing:2px;">TEAMS INFORMATION</h2>
+
+            <div class="form-group">
+                <label>Team Name</label>
+                <input type="text" name="Team_Name" placeholder="Enter Team Name">
+            </div>
+            <div class="form-group">
+                <label>Role in Team</label>
+                <select name="Role_in_team">
+                    <option value="none">none</option>
+                    <option value="IGL">IGL</option>
+                    <option value="Support">Support</option>
+                    <option value="Assaulter">Assaulter</option>
+                    <option value="Entry Fragger">Entry Fragger</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Device Name</label>
+                <input type="text" name="Device_Name" placeholder="Enter Device Name">
+            </div>
+            <input type="submit" value="SEND">
+        </form>
+    </div>
 
 </body>
-
 </html>
