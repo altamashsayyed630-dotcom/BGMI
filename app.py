@@ -5,22 +5,21 @@ import mysql.connector
 import razorpay
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "my_secret_key_123")
+app.secret_key = "my_secret_key_123"
 
-RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID", "rzp_test_REPlDVTyFCXpJM")
-RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET", "63hXKAAdfkKgAZv5ntD4EERi")
+RAZORPAY_KEY_ID = "rzp_test_REPlDVTyFCXpJM"
+RAZORPAY_KEY_SECRET = "63hXKAAdfkKgAZv5ntD4EERi"
 
 razorpay_client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 
 
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.environ.get("DB_HOST"),
-        user=os.environ.get("DB_USER"),
-        password=os.environ.get("DB_PASSWORD"),
-        port=int(os.environ.get("DB_PORT", "10104")),
-        ssl_disabled=False,
-        database=os.environ.get("DB_NAME")
+        host="sql5.freesqldatabase.com",
+        user="sql5829142",
+        password="ulbvRdsegj",
+        database="sql5829142",
+        port=3306
     )
 
 
@@ -133,16 +132,15 @@ def contact():
         message = request.form.get('Message')
         conn = get_db_connection()
         cursor = conn.cursor()
-        query = "INSERT INTO contact_us (name, email_id, subject, Message) VALUES (%s, %s, %s, %s)"
-        values = (name, email_id, subject, message)
-        cursor.execute(query, values)
+        cursor.execute(
+            "INSERT INTO contact_us (name, email_id, subject, Message) VALUES (%s, %s, %s, %s)",
+            (name, email_id, subject, message)
+        )
         conn.commit()
         cursor.close()
         conn.close()
-
         flash("Message sent successfully!", "success")
         return redirect(url_for('contact'))
-
     return render_template('contact.html')
 
 
@@ -161,7 +159,6 @@ def serviceRequest():
             request.form.get('Role_in_team'),
             request.form.get('Device_Name')
         )
-
         try:
             conn = get_db_connection()
             cursor = conn.cursor()
@@ -179,7 +176,6 @@ def serviceRequest():
         except Exception as e:
             flash("An unexpected error occurred.", "error")
             return redirect(url_for('serviceRequest'))
-
     return render_template('serviceRequest.html')
 
 
@@ -194,13 +190,8 @@ def create_order():
         data = request.get_json()
         if not data or 'amount' not in data:
             return jsonify({'error': 'Amount is required'}), 400
-
         amount = int(data['amount']) * 100
-        order_data = {
-            'amount': amount,
-            'currency': "INR",
-            'payment_capture': '1'
-        }
+        order_data = {'amount': amount, 'currency': "INR", 'payment_capture': '1'}
         order = razorpay_client.order.create(data=order_data)
         return jsonify(order)
     except Exception as e:
