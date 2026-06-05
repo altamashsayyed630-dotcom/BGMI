@@ -1,69 +1,67 @@
- <style>
- nav {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0c0c0c;
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px;
+}
+
+nav {
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
-}
-body {
-        background: #0c0c0c;
-        color: white;
-         font-family: "Archivo Black", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-
-        padding: 20px;
-    }
-.nav-links {
-    flex: 1;
-    text-align: right;
+    flex-wrap: wrap;
 }
 
-.nav-links ul li {
+.nav-links { flex: 1; text-align: right; }
+
+.nav-links ul {
     list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-.nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-    font-family: "Archivo Black", sans-serif; /* yeh important hai */
-}
+.nav-links ul li { display: inline-block; padding: 8px 12px; position: relative; }
+.nav-links ul li a { color: #fff; text-decoration: none; font-size: 13px; font-family: "Archivo Black", sans-serif; }
+.nav-links ul li::after { content: ''; width: 0%; height: 2px; background: #f44336; display: block; margin: auto; transition: 0.5s; }
+.nav-links ul li:hover::after { width: 100%; }
 
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #f44336;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
+h1 { font-size: 36px; font-weight: 600; text-align: center; margin: 20px 0; }
 
-.nav-links ul li:hover::after {
+.table-wrapper { overflow-x: auto; width: 100%; }
+
+table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    min-width: 400px;
 }
-        table {
-            width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        }
-        th, td {
 
-              padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: center;
-        }
-        th {
-             background: #f9004d;
-        }
-        h1 {
-            font-size: 36px;
-            font-weight: 600;
-             text-align: center;
-        }
-    </style>
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+th { background: #f9004d; }
+
+@media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    th, td { padding: 7px; font-size: 12px; }
+    .nav-links ul li a { font-size: 10px; }
+    .nav-links ul li { padding: 4px 6px; }
+}
