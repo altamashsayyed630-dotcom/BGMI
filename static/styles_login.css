@@ -17,50 +17,32 @@
 
 nav {
     display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
+    padding: 12px 4%;
+    justify-content: flex-end;
     align-items: center;
-    flex-wrap: wrap;
+    background: rgba(0,0,0,0.3);
+    width: 100%;
 }
-
-.nav-links { flex: 1; text-align: right; }
 
 .nav-links ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
 }
 
-.nav-links ul li {
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-
-.nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #f44336;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
+.nav-links ul li { display: inline-block; padding: 6px 8px; position: relative; white-space: nowrap; }
+.nav-links ul li a { color: #fff; text-decoration: none; font-size: 12px; }
+.nav-links ul li::after { content: ''; width: 0%; height: 2px; background: #f44336; display: block; margin: auto; transition: 0.5s; }
 .nav-links ul li:hover::after { width: 100%; }
 
 .box {
-    font-family: "Archivo Black", sans-serif;
-    margin: 6% auto;
+    margin: 5% auto;
     width: 90%;
     max-width: 400px;
     background: rgba(0, 0, 0, 0.5);
@@ -75,37 +57,10 @@ nav {
     padding: 30px 20px;
 }
 
-.box h2 {
-    color: aliceblue;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 2em;
-    margin: 0px;
-}
-
+.box h2 { color: aliceblue; text-transform: uppercase; text-align: center; padding: 15px 0; font-size: 2em; margin: 0; }
 .box form { width: 100%; max-width: 330px; }
-
-.box form .form-group {
-    border-bottom: 3px solid #fff;
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-}
-
-.box form .form-group input {
-    font-family: "Archivo Black", sans-serif;
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    padding: 0 30px 0 10px;
-    font-size: 1.2em;
-    border-radius: 4px;
-    color: #fff;
-    outline: none;
-}
+.box form .form-group { border-bottom: 3px solid #fff; position: relative; width: 100%; height: auto; margin: 18px 0; }
+.box form .form-group input { width: 100%; height: 50px; background: transparent; border: none; padding: 0 10px; font-size: 1.1em; color: #fff; outline: none; }
 
 .box form input[type=submit] {
     background-color: rgb(53, 16, 86);
@@ -113,7 +68,6 @@ nav {
     border: 2px solid transparent;
     text-transform: uppercase;
     font-weight: 600;
-    font-family: "Archivo Black", sans-serif;
     padding: 10px 30px;
     display: block;
     margin: 20px auto;
@@ -124,18 +78,13 @@ nav {
     letter-spacing: 1px;
 }
 
-.box form input[type=submit]:hover {
-    background-color: transparent;
-    border: 2px solid #f44336;
-    color: #f44336;
-}
-
+.box form input[type=submit]:hover { background-color: transparent; border: 2px solid #f44336; color: #f44336; }
 .box form p { text-align: center; color: #fff; margin: 10px 0; }
 .box form p a { text-decoration: none; text-transform: uppercase; font-weight: 600; color: #f44336; }
 
 @media (max-width: 480px) {
-    .box { margin: 10% auto; border-radius: 20px; }
+    .box { margin: 8% auto; border-radius: 20px; }
     .box h2 { font-size: 1.5em; }
-    .nav-links ul li { padding: 6px 8px; }
-    .nav-links ul li a { font-size: 11px; }
+    .nav-links ul li a { font-size: 10px; }
+    .nav-links ul li { padding: 4px 5px; }
 }
