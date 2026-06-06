@@ -1,5 +1,6 @@
 import csv
 import os
+import ssl
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import mysql.connector
 import razorpay
@@ -16,10 +17,11 @@ razorpay_client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
 def get_db_connection():
     return mysql.connector.connect(
         host="mysql-1d9b030-althamashsayyed630-cb57.g.aivencloud.com",
+        port=13868,
         user="avnadmin",
         password="AVNS_asjjQ7l7PbOca4cqG0b",
         database="defaultdb",
-        port=13868
+        ssl_disabled=False
     )
 
 
