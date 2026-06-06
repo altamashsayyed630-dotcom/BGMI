@@ -2,51 +2,47 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles_table.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>{{ title }}</h1>
-     <nav>
-
-            <div class="nav-links">
-                <ul>
-                    <li><a href="{{ url_for('login') }}">LOGIN</a></li>
-                    <li><a href="{{ url_for('home') }}">HOME</a></li>
-                    <li><a href="{{ url_for('table') }}">TABLE</a></li>
-                    <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
-                    <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
-                </ul>
-            </div>
-     </nav>
-
-
     <nav>
-         <div class="links">
-               <a href="{{ url_for('table') }}">Points Table</a>
-              <a href="{{ url_for('show_data') }}">Data Table</a>
-         </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+                <li><a href="{{ url_for('home') }}">HOME</a></li>
+                <li><a href="{{ url_for('table') }}">TABLE</a></li>
+                <li><a href="{{ url_for('Highlight') }}">HIGHLIGHTS</a></li>
+                <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <br>
+    <h1>{{ title }}</h1>
 
+    <div class="sub-nav">
+        <a href="{{ url_for('table') }}">Points Table</a>
+        <a href="{{ url_for('show_data') }}">Data Table</a>
+    </div>
 
-    <table>
-        <tr>
-            {% for header in headers %}
-            <th>{{ header }}</th>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                {% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+            <tr>
+                {% for item in row %}
+                <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-        </tr>
-        {% for row in data %}
-        <tr>
-            {% for item in row %}
-            <td>{{ item }}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+        </table>
+    </div>
 </body>
 </html>
